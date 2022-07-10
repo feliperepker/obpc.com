@@ -1,0 +1,29 @@
+.sobre{
+    width: 100%;
+    text-align: center;
+    padding: 7% 0;
+    
+    h2{
+        color: $color-black;
+        font-size: 1.7em;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    p{
+        margin: auto;
+        margin-top: 9vh;
+        width: 70vw;
+    }
+}
+#imagem{
+    box-shadow: inset 6px 6px 25px 0px rgba(0, 0, 0, 0.692);
+    background-color: black;
+    background-image: url('https://images.pexels.com/photos/952437/pexels-photo-952437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    max-width: 100%;
+    height: 50vh;
+    filter: brightness(70%);
+    
+}

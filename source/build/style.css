@@ -1,0 +1,546 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Righteous&family=Sarala&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap");
+button {
+  margin-top: 3em;
+  background-color: transparent;
+  border: 2px solid rgb(194, 194, 189);
+  padding: 15px 30px;
+  border-radius: 50px;
+  transition: ease 0.3s;
+  color: rgb(41, 41, 41);
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 0.7em;
+  transition: ease 0.4s;
+}
+
+button:hover {
+  background-color: rgb(41, 41, 41);
+  border: 2px solid rgb(41, 41, 41);
+  cursor: pointer;
+  color: white;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+header {
+  width: 100%;
+  height: 12vh;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.192);
+}
+header .container-logo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+header img {
+  margin: 3vw 0.5vw 3vw 3vw;
+}
+header h2 {
+  font-family: "Righteous";
+  color: rgb(77, 77, 77);
+  font-size: 1.4em;
+}
+header nav {
+  margin: 5px;
+}
+header nav a {
+  margin: 2vw;
+  padding: 5px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: rgb(49, 49, 49);
+  transition: ease 0.5s;
+  font-family: "Montserrat", sans-serif;
+}
+header nav a:hover {
+  color: rgb(194, 194, 189);
+}
+
+@media (max-width: 1000px) {
+  nav {
+    display: none;
+  }
+  .hamburguer {
+    background-color: rgb(41, 41, 41);
+    height: 3px;
+    margin: 12px auto;
+  }
+  #ham1 {
+    width: 60%;
+    animation: x-to-ham ease-in 1.5s forwards;
+  }
+  #ham2 {
+    width: 100%;
+    animation: y-to-ham ease-in 1.5s forwards;
+  }
+  .menu-toggle {
+    width: 40px;
+    height: 30px;
+    margin-right: 20px;
+  }
+  .menu-section.on {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: white;
+    width: 80vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+  }
+  .menu-section.on nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .menu-section.on nav a {
+    transition-duration: 0.5s;
+    line-height: 3rem;
+  }
+  .menu-section.on .menu-toggle {
+    position: absolute;
+    right: 0;
+    top: 15px;
+  }
+  .menu-section.on .menu-toggle #ham1 {
+    animation: ham-to-x 1.5s ease-in forwards;
+  }
+  .menu-section.on .menu-toggle #ham2 {
+    animation: ham-to-y 1.5s ease-in forwards;
+  }
+}
+@keyframes ham-to-y {
+  10% {
+    transform: translateY(-100%);
+  }
+  30% {
+    transform: translateY(-300%);
+    width: 50%;
+  }
+  60% {
+    transform: translateY(-100%);
+    width: 70%;
+  }
+  90% {
+    transform: translateY(-100%);
+    width: 70%;
+  }
+  100% {
+    transform: rotate(45deg) translate(-7px, -4px);
+    width: 70%;
+  }
+}
+@keyframes ham-to-x {
+  10% {
+    transform: translateY(100%);
+  }
+  30% {
+    transform: translateY(300%);
+    width: 50%;
+  }
+  60% {
+    transform: translateY(100%);
+    width: 70%;
+  }
+  90% {
+    transform: translateY(100%);
+    width: 70%;
+  }
+  100% {
+    transform: translateY(100%);
+    width: 70%;
+    transform: rotate(-45deg) translate(-7px, 3px);
+  }
+}
+@keyframes x-to-ham {
+  0% {
+    width: 70%;
+    transform: rotate(-45deg) translate(-7px, 3px);
+  }
+  30% {
+    transform: translateY(300%);
+    width: 50%;
+  }
+  60% {
+    transform: translateY(100%);
+    width: 70%;
+  }
+  90% {
+    transform: translateY(100%);
+    width: 70%;
+  }
+  100% {
+    width: 60%;
+  }
+}
+@keyframes y-to-ham {
+  0% {
+    transform: rotate(45deg) translate(-7px, -4px);
+    width: 70%;
+  }
+  30% {
+    transform: translateY(-300%);
+    width: 50%;
+  }
+  60% {
+    transform: translateY(-100%);
+    width: 70%;
+  }
+  90% {
+    transform: translateY(-100%);
+    width: 70%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+.slider {
+  width: 100%;
+  height: 95vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+.slider img {
+  width: 100%;
+  height: 100vh;
+}
+
+@media (max-width: 1000px) {
+  .slider {
+    height: 70vh;
+  }
+  .slider img {
+    width: 150%;
+    height: 70vh;
+  }
+}
+.sobre {
+  width: 100%;
+  text-align: center;
+  padding: 7% 0;
+}
+.sobre h2 {
+  color: rgb(41, 41, 41);
+  font-size: 1.7em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.sobre p {
+  margin: auto;
+  margin-top: 9vh;
+  width: 70vw;
+}
+
+#imagem {
+  box-shadow: inset 6px 6px 25px 0px rgba(0, 0, 0, 0.692);
+  background-color: black;
+  background-image: url("https://images.pexels.com/photos/952437/pexels-photo-952437.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  max-width: 100%;
+  height: 50vh;
+  filter: brightness(70%);
+}
+
+.ministerios {
+  margin: -2% 0 6%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.ministerios div {
+  width: 25vw;
+  margin: 3vw;
+  padding: 10px;
+  text-align: center;
+}
+.ministerios div h3 {
+  color: rgb(41, 41, 41);
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.ministerios div p {
+  font-size: 0.8em;
+}
+.ministerios div img {
+  width: 100%;
+  margin: 2em 0 1em 0;
+  object-fit: cover;
+  transition: ease 0.3s;
+  box-shadow: 0px 0px 10px -2px rgba(0, 0, 0, 0.4941176471);
+}
+.ministerios div img:hover {
+  filter: brightness(140%);
+  cursor: pointer;
+}
+
+@media (max-width: 800px) {
+  .ministerios {
+    display: grid;
+    grid-column: 1fr;
+  }
+  .ministerios div {
+    width: 70%;
+    margin: auto;
+  }
+  .ministerios div h3 {
+    margin-top: 50px;
+  }
+}
+.contribua {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(231, 231, 231);
+  padding: 5% 0;
+}
+.contribua h2 {
+  color: rgb(41, 41, 41);
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.contribua p {
+  width: 60%;
+  margin: 2em auto 0;
+}
+
+#contato {
+  width: 100%;
+  padding: 2% 0 2% 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: 2% 0;
+}
+#contato h2 {
+  color: rgb(41, 41, 41);
+  font-size: 1.4em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+#contato p {
+  margin: 1em auto;
+}
+#contato div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  width: 100%;
+}
+#contato i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-left: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(194, 194, 189);
+  border-radius: 20px;
+  color: rgb(41, 41, 41);
+  transition: ease 0.4s;
+}
+#contato i:hover {
+  background-color: rgb(41, 41, 41);
+  color: white;
+}
+
+footer {
+  background-color: rgb(41, 41, 41);
+  color: white;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+}
+footer p {
+  margin: auto;
+  font-weight: lighter;
+  font-size: 0.7em;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.35);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: visibility 0s, opacity 0.5s;
+}
+
+.modal {
+  position: relative;
+  width: 70%;
+  height: 90%;
+  background-color: rgb(240, 239, 239);
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.modal h2 {
+  margin: 8vh;
+}
+.modal p {
+  width: 70%;
+  margin-bottom: 5vh;
+}
+.modal .img-row {
+  display: flex;
+  flex-direction: row;
+}
+.modal .img-row img {
+  width: 20vw;
+  height: 40vh;
+  object-fit: cover;
+  margin: 1vw;
+  box-shadow: 2px 1px 10px -2px rgba(0, 0, 0, 0.4941176471);
+  transition: 0.3s;
+}
+.modal .img-row img:hover {
+  transform: scale(1.04);
+}
+.modal span {
+  font-size: 40px;
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  cursor: pointer;
+}
+
+.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+#endereco {
+  text-align: center;
+}
+
+.contas {
+  display: flex;
+  flex-direction: row;
+}
+.contas p {
+  margin-bottom: 3vh;
+}
+.contas #margin-left {
+  margin-left: 10px;
+}
+
+@media (max-width: 1000px) {
+  .modal {
+    width: 99%;
+    height: auto;
+    border-radius: 5px;
+  }
+  .modal p {
+    width: 90%;
+  }
+  .modal .img-row {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .modal .img-row img {
+    width: 97%;
+    height: 100px;
+    margin: 5px auto;
+  }
+  .modal .img-row img:hover {
+    transform: scale(1);
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: white;
+}
+
+h2 {
+  font-weight: 300;
+  color: rgb(46, 46, 46);
+  font-size: 2em;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(36, 35, 35);
+}
+
+p {
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=style.css.map */
